@@ -9,23 +9,25 @@ import java.awt.Graphics;
 import javax.swing.JPanel;
 import proyectograf.Metodos;
 import tiburcio.lib2D.s2D;
+
 /**
  *
  * @author reyes
  */
-public class Circuito1 extends JPanel{
+public class Circuito1 extends JPanel {
 
     public Circuito1() {
         //DEF_SISTEMA("Mirilla", 800, 800, Color.LIGHT_GRAY);
-        
-       
+
     }
-    
-     public void paint(Graphics g) {
-         Metodos m=new Metodos();
+
+    public void paint(Graphics g) {
+        Metodos m = new Metodos();
+        g.setColor(Color.white);
+        g.fillRect(0, 0, 700, 500);
         m.Arduino(g);
         m.Proto(g);
-        
-     }
-    
+
+    }
+
 }

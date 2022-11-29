@@ -22,8 +22,7 @@ public class CircuitoFrame extends javax.swing.JFrame {
         JPanel tab1 = circuito1;
         tab1.setBackground(Color.red);
         jTabbedPane1.add("Circuito1",tab1);
-        jTabbedPane1.setBackgroundAt(0,new Color(191,191,191));
-        //jTabbedPane1.setBackground(Color.red);
+        
     }
 
     /**

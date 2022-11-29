@@ -21,6 +21,8 @@ public class Metodos {
     public void Arduino(Graphics g) {
         int[] xPoints = {40, 280, 300, 300, 320, 320, 300, 300, 40};
         int[] yPoints = {40, 40, 60, 100, 120, 200, 220, 240, 240};
+        
+        g.setColor(Color.black);
         g.drawPolygon(xPoints, yPoints, 9);
 
         g.drawRect(30, 80, 40, 30);
