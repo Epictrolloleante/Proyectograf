@@ -95,7 +95,35 @@ public class Metodos {
         int[] BprotoCuaY = {205, 205, 200, 200};
         int[] BprotoCX = {370, 375, 375, 370};
         int[] BprotoCY = {185, 185, 190, 190};
+        int[] CprotoCX = {370, 375, 375, 370};
+        int[] CprotoCY = {105, 105, 110, 110};
+        int[] contX = new int[4];
+        int[] contY = new int[4];
         
+        for (int i = 0; i < contX.length; i++) {
+            contX[i] = CprotoCX[i];
+            contY[i] = CprotoCY[i];
+        }
+
+        for (int y = 0; y < 5; y++) {
+            for (int x = 0; x < 27; x++) {
+                for (int i = 0; i < contX.length; i++) {
+                    contX[i] = contX[i] + 5;
+                }
+
+                g.fillPolygon(contX, contY, 4);
+                for (int i = 0; i < contX.length; i++) {
+                    contX[i] = contX[i] + 5;
+                }
+            }
+            for (int i = 0; i < contX.length; i++) {
+                contX[i] = CprotoCX[i];
+            }
+
+            for (int i = 0; i < contY.length; i++) {
+                contY[i] = contY[i] + 20;
+            }
+        }
         
         g.setColor(Color.BLACK);
         g.drawPolygon(protoX, protoY, 4);
