@@ -13,12 +13,13 @@ import tiburcio.lib2D.s2D;
  * @author reyes
  */
 public class Metodos {
-
+    public int coordPines[][]=new int[32][2];
     public Metodos() {
        
     }
 
     public void Arduino(Graphics g) {
+        int pin=0;
         int[] xPoints = {40, 280, 300, 300, 320, 320, 300, 300, 40};
         int[] yPoints = {40, 40, 60, 100, 120, 200, 220, 240, 240};
         
@@ -65,9 +66,15 @@ public class Metodos {
         g.setColor(Color.darkGray);
         for (int i = 0; i < 100; i = i + 10) {
             g.fillRect(97 + i, 47, 6, 6);
+            coordPines[pin][0]=97 + i;
+            coordPines[pin][1]=47;
+            pin++;
         }
         for (int i = 0; i < 80; i = i + 10) {
             g.fillRect(202 + i, 47, 6, 6);
+            coordPines[pin][0]=202 + i;
+            coordPines[pin][1]=47;
+            pin++;
         }
 
         g.setColor(Color.black);
@@ -77,11 +84,17 @@ public class Metodos {
         g.setColor(Color.darkGray);
         for (int i = 0; i < 80; i = i + 10) {
             g.fillRect(142 + i, 227, 6, 6);
+            coordPines[pin][0]=142 + i;
+            coordPines[pin][1]=227;
+            pin++;
         }
         for (int i = 0; i < 60; i = i + 10) {
             g.fillRect(227 + i, 227, 6, 6);
+            coordPines[pin][0]=227 + i;
+            coordPines[pin][1]=227;
+            pin++;
         }
-
+        
     }
     
     public void Proto(Graphics g){
