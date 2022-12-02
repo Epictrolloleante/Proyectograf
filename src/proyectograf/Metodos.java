@@ -14,6 +14,14 @@ import tiburcio.lib2D.s2D;
  */
 public class Metodos {
     public int coordPines[][]=new int[32][2];
+    public int coordProto1X[][]=new int[2][27];
+    public int coordProto1Y[][]=new int[2][27];
+    
+    public int coordProto2X[][]=new int[4][27];
+    public int coordProto2Y[][]=new int[4][27];
+    
+    public int coordProto3X[][]=new int[2][27];
+    public int coordProto3Y[][]=new int[2][27];
     public Metodos() {
        
     }
@@ -100,12 +108,17 @@ public class Metodos {
     public void Proto(Graphics g){
         int[] protoX = {360, 650, 650, 360};
         int[] protoY = {50, 50, 220, 220};
+        //Coordenadas proto primera linea
         int[] protoCuaX = {370, 375, 375, 370};
         int[] protoCuaY = {65, 65, 70, 70};
+        //Coordenadas proto segunda linea
         int[] protoCX = {370, 375, 375, 370};
         int[] protoCY = {80, 80, 85, 85};
+        
+        //Coordenadas proto (parte baja) primer linea
         int[] BprotoCuaX = {370, 375, 375, 370};
         int[] BprotoCuaY = {205, 205, 200, 200};
+        //Coordenadas proto (parte baja) segunda linea
         int[] BprotoCX = {370, 375, 375, 370};
         int[] BprotoCY = {185, 185, 190, 190};
         int[] CprotoCX = {370, 375, 375, 370};
@@ -118,12 +131,16 @@ public class Metodos {
             contY[i] = CprotoCY[i];
         }
 
-        for (int y = 0; y < 5; y++) {
+        for (int y = 0; y < 4; y++) {
             for (int x = 0; x < 27; x++) {
                 for (int i = 0; i < contX.length; i++) {
                     contX[i] = contX[i] + 5;
                 }
-
+                
+                //Coordenadas arreglo
+                coordProto2X[y][x]=contX[0];
+                coordProto2Y[y][x]=contY[0];
+                
                 g.fillPolygon(contX, contY, 4);
                 for (int i = 0; i < contX.length; i++) {
                     contX[i] = contX[i] + 5;
@@ -153,6 +170,13 @@ public class Metodos {
                 protoCuaX[i] = protoCuaX[i] + 5;
                 protoCX[i] = protoCX[i] + 5;
             }
+            //Coordenadas proto primera linea
+            coordProto1X[0][x]= protoCuaX[0];
+            coordProto1Y[0][x]=protoCuaY[0];
+            //Coordenadas proto segunda linea
+            coordProto1X[1][x]= protoCX[0];
+            coordProto1Y[1][x]=protoCY[0];
+            //Dibujar cuadrados p/ pines
             g.fillPolygon(protoCuaX, protoCuaY, 4);
             g.fillPolygon(protoCX, protoCY, 4);
             for (int i = 0; i < protoCuaX.length; i++) {
@@ -165,6 +189,13 @@ public class Metodos {
                 BprotoCuaX[i] = BprotoCuaX[i] + 5;
                 BprotoCX[i] = BprotoCX[i] + 5;
             }
+            //Coordenadas proto primera linea
+            coordProto3X[0][x]= BprotoCuaX[0];
+            coordProto3Y[0][x]=BprotoCuaY[0];
+            //Coordenadas proto segunda linea
+            coordProto3X[1][x]= BprotoCX[0];
+            coordProto3Y[1][x]=BprotoCY[0];
+            //Dibujar cuadrados p/ pines
             g.fillPolygon(BprotoCuaX, BprotoCuaY, 4);
             g.fillPolygon(BprotoCX, BprotoCY, 4);
             for (int i = 0; i < BprotoCuaX.length; i++) {
