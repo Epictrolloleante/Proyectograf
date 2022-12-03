@@ -62,10 +62,10 @@ public class Circuito1 extends JPanel {
         
         //Potenciometro
         g.setColor(Color.red);
-        g.fillRect(m.coordProto2X[3][1], m.coordProto2Y[3][1], 5, 25);
+        g.fillRect(m.coordProto2X[3][1], m.coordProto2Y[3][1], 5, 40);
         
         g.setColor(Color.black);
-        g.fillRect(m.coordProto2X[3][3], m.coordProto2Y[3][3], 5, 35);
+        g.fillRect(m.coordProto2X[3][3], m.coordProto2Y[3][3], 5, 25);
         
         //PIN 2
         g.setColor(Color.decode("#68289c"));
