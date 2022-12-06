@@ -29,6 +29,8 @@ public class Circuito1 extends JPanel {
     public int coordPINLCDY=243;
     public int coordsPINLCDX[]=new int[16];
     
+    public Graphics g2;
+    
     
     public Circuito1() {
         //DEF_SISTEMA("Mirilla", 800, 800, Color.LIGHT_GRAY);
@@ -45,8 +47,19 @@ public class Circuito1 extends JPanel {
         dibujarPotenciometro(g);
         dibujarResistencias(g, m.coordProto2X[0][15], m.coordProto2Y[0][15]);
         dibujarCables(g);
-        m.Caliente(g);
+        m.Caliente2(g);
+        this.setG(g);
     }
+    
+    public void setG(Graphics g){
+        this.g2 = g;
+    }
+    
+    public Graphics getG(){
+        return g2;
+    }
+    
+    
     
     public void dibujarCables(Graphics g){
         //PUENTE TIERRA y FASE

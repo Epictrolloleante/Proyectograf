@@ -24,12 +24,12 @@ public class Metodos {
     public int coordProto3Y[][]=new int[2][27];
     
     public Color c;
+    public Color c2;
     public int x;
     public int y;
     public int w;
     public int h;
     
-    public Color c2;
     public int x2;
     public int y2;
     public int w2;
@@ -44,6 +44,34 @@ public class Metodos {
         g.fillOval(x, y, w, h);
     }
     
+    public void Caliente2(Graphics g){
+        int arc1x=x;
+        int arc1y=(int) Math.round(y+(h*0.7));
+        int arc2x=x;
+        int arc2y=(int) Math.round(y+(h*0.4));
+        int arc3x=(int) Math.round(x+(w*0.1));
+        int arc3y=(int) Math.round(y+(h*0.2));
+        int arc4x=(int) Math.round(x+(w*0.45));
+        int arc5x=(int) Math.round(x+(w*0.5));
+        
+        g.setColor(c);
+        
+        
+        g.fillArc(arc1x, arc1y, w, (int) Math.round(h*0.4), 180,180 );
+        g.fillArc(arc2x, arc2y, w, (int) Math.round(h), 0,180 );
+        g.fillArc(arc3x, arc3y, (int) Math.round(w*0.35), (int) Math.round(h*0.8), 270,180 );
+        g.fillArc(arc4x, arc3y, (int) Math.round(w*0.35), (int) Math.round(h*0.8), 90,180 );
+        g.fillArc(arc5x, arc3y, (int) Math.round(w*0.35), (int) Math.round(h*0.8), 270,180 );
+        
+        g.setColor(c2);
+        g.fillArc((int) (arc1x+w*0.1), (int) (arc1y-h*0.05), (int) Math.round(w*0.8), (int) Math.round(h*0.4), 180,180 );
+        g.fillArc((int) (arc2x+w*0.1), (int) (arc2y+h*0.1), (int) Math.round(w*0.8), (int) Math.round(h*0.8), 0,180 );
+        g.fillArc((int) (arc3x+w*0.07), (int) (arc3y+h*0.03), (int) Math.round((w*0.35)*0.7), (int) Math.round((h*0.8)*0.7), 270,180 );
+        g.fillArc((int) (arc4x+w*0.04), (int) (arc3y+h*0.03), (int) Math.round((w*0.35)*0.7), (int) Math.round((h*0.8)*0.7), 90,180 );
+        g.fillArc((int) (arc5x+w*0.06), (int) (arc3y+h*0.03), (int) Math.round((w*0.35)*0.7), (int) Math.round((h*0.8)*0.7), 270,180 );
+       
+        
+    }
     public void Fuente(Graphics g){
         //ALIMENTACION
         g.setColor(Color.black);
@@ -281,6 +309,14 @@ public class Metodos {
 
     public void setC(Color c) {
         this.c = c;
+    }
+    
+    public Color getC2() {
+        return c2;
+    }
+
+    public void setC2(Color c2) {
+        this.c2 = c2;
     }
 
     public int getX() {
