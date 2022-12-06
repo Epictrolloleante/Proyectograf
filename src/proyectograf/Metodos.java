@@ -22,8 +22,44 @@ public class Metodos {
     
     public int coordProto3X[][]=new int[2][27];
     public int coordProto3Y[][]=new int[2][27];
+    
+    public Color c;
+    public int x;
+    public int y;
+    public int w;
+    public int h;
+    
+    public Color c2;
+    public int x2;
+    public int y2;
+    public int w2;
+    public int h2;
+    
     public Metodos() {
        
+    }
+    
+    public void Caliente(Graphics g){
+        g.setColor(c);
+        g.fillOval(x, y, w, h);
+    }
+    
+    public void Fuente(Graphics g){
+        //ALIMENTACION
+        g.setColor(Color.black);
+        g.fillRect(coordProto3X[0][0]-25, coordProto3Y[0][0], 30, 5);
+        g.fillRect(coordProto3X[0][0]-25, coordProto3Y[0][0], 5, 65);
+        
+        g.setColor(Color.red);
+        g.fillRect(coordProto3X[1][0]-35, coordProto3Y[1][0]-5, 40, 5);
+        g.fillRect(coordProto3X[1][0]-35, coordProto3Y[1][0]-5, 5, 60);
+        
+        //Bateria
+        g.setColor(Color.decode("#cccccc"));
+        g.fillRect(coordProto3X[0][0]-40, coordProto3Y[0][0]+60, 40, 80);
+        
+        g.setColor(Color.decode("#bd8759"));
+        g.fillRect(coordProto3X[0][0]-40, coordProto3Y[0][0]+65, 40, 80);
     }
 
     public void Arduino(Graphics g) {
@@ -117,10 +153,10 @@ public class Metodos {
         
         //Coordenadas proto (parte baja) primer linea
         int[] BprotoCuaX = {370, 375, 375, 370};
-        int[] BprotoCuaY = {205, 205, 200, 200};
+        int[] BprotoCuaY = {185, 185, 190, 190};
         //Coordenadas proto (parte baja) segunda linea
         int[] BprotoCX = {370, 375, 375, 370};
-        int[] BprotoCY = {185, 185, 190, 190};
+        int[] BprotoCY = {205, 205, 200, 200};
         int[] CprotoCX = {370, 375, 375, 370};
         int[] CprotoCY = {105, 105, 110, 110};
         int[] contX = new int[4];
@@ -205,6 +241,85 @@ public class Metodos {
         }
     }
 
+    public int getX2() {
+        return x2;
+    }
+
+    public void setX2(int x2) {
+        this.x2 = x2;
+    }
+
+    public int getY2() {
+        return y2;
+    }
+
+    public void setY2(int y2) {
+        this.y2 = y2;
+    }
+
+    public int getW2() {
+        return w2;
+    }
+
+    public void setW2(int w2) {
+        this.w2 = w2;
+    }
+
+    public int getH2() {
+        return h2;
+    }
+
+    public void setH2(int h2) {
+        this.h2 = h2;
+    }
+    
+    
+
+    public Color getC() {
+        return c;
+    }
+
+    public void setC(Color c) {
+        this.c = c;
+    }
+
+    public int getX() {
+        return x;
+    }
+
+    public void setX(int x) {
+        this.x = x;
+    }
+
+    public int getY() {
+        return y;
+    }
+
+    public void setY(int y) {
+        this.y = y;
+    }
+
+    public int getW() {
+        return w;
+    }
+
+    public void setW(int w) {
+        this.w = w;
+    }
+
+    public int getH() {
+        return h;
+    }
+
+    public void setH(int h) {
+        this.h = h;
+    }
+
+    
+    
+    
+    
+    
     
 
 }

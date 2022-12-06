@@ -26,7 +26,6 @@ public class Circuito1 extends JPanel {
     public int PantallaRect3X[]={400,630,630,400};
     public int PantallaRect3Y[]={270,270,330,330};
     
-    public int coordPINLCDX=405;
     public int coordPINLCDY=243;
     public int coordsPINLCDX[]=new int[16];
     
@@ -46,6 +45,7 @@ public class Circuito1 extends JPanel {
         dibujarPotenciometro(g);
         dibujarResistencias(g, m.coordProto2X[0][15], m.coordProto2Y[0][15]);
         dibujarCables(g);
+        m.Caliente(g);
     }
     
     public void dibujarCables(Graphics g){
@@ -103,30 +103,16 @@ public class Circuito1 extends JPanel {
         g.fillRect(m.coordPines[4][0], m.coordPines[4][1]-52, 5, 57);
         g.fillRect(m.coordPines[4][0], m.coordPines[4][1]-52, 279, 5);
         
-        //ALIMENTACION
-        g.setColor(Color.black);
-        g.fillRect(m.coordProto3X[1][0]-25, m.coordProto3Y[1][0], 30, 5);
-        g.fillRect(m.coordProto3X[1][0]-25, m.coordProto3Y[1][0], 5, 65);
-        
-        g.setColor(Color.red);
-        g.fillRect(m.coordProto3X[0][0]-35, m.coordProto3Y[0][0]-5, 40, 5);
-        g.fillRect(m.coordProto3X[0][0]-35, m.coordProto3Y[0][0]-5, 5, 60);
-        
-        //Bateria
-        g.setColor(Color.decode("#cccccc"));
-        g.fillRect(m.coordProto3X[1][0]-40, m.coordProto3Y[1][0]+60, 40, 80);
-        
-        g.setColor(Color.decode("#bd8759"));
-        g.fillRect(m.coordProto3X[1][0]-40, m.coordProto3Y[1][0]+65, 40, 80);
+        m.Fuente(g);
         
         //EXTRA CABLE
         g.setColor(Color.black);
-        g.fillRect(m.coordProto3X[1][7], m.coordProto3Y[1][7], 5, 65);
+        g.fillRect(m.coordProto3X[0][7], m.coordProto3Y[0][7], 5, 65);
         
-        g.fillRect(m.coordProto3X[1][16], m.coordProto3Y[1][16], 5, 65);
+        g.fillRect(m.coordProto3X[0][16], m.coordProto3Y[0][16], 5, 65);
         
         g.setColor(Color.red);
-        g.fillRect(m.coordProto3X[0][4], m.coordProto3Y[0][4]-5, 5, 50);
+        g.fillRect(m.coordProto3X[1][4], m.coordProto3Y[1][4]-5, 5, 50);
         
         g.setColor(Color.magenta);
         g.fillRect(m.coordProto2X[3][2], m.coordProto2Y[3][2], 35, 5);
@@ -168,6 +154,7 @@ public class Circuito1 extends JPanel {
         
     }
     public void dibujarLCD(Graphics g){
+        int coordPINLCDX=405;
         //DIBUJAR PANTALLA LCD
         g.setColor(Color.decode("#3bad61"));
         g.fillPolygon(PantallaRect1X,PantallaRect1Y,4);

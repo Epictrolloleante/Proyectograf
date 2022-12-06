@@ -5,6 +5,7 @@
 package proyectograf;
 import java.awt.Color;
 import javax.swing.JPanel;
+import javax.swing.JSlider;
 import proyectograf.Circuito1;
 /**
  *
@@ -17,11 +18,15 @@ public class CircuitoFrame extends javax.swing.JFrame {
      */
     public CircuitoFrame() {
         initComponents();
-        Circuito1 circuito1= new Circuito1();
         
-        JPanel tab1 = circuito1;
-        tab1.setBackground(Color.red);
+        
+        
         jTabbedPane1.add("Circuito1",tab1);
+        jTabbedPane1.add("Circuito2",tab2);
+        jTabbedPane1.add("Circuito3",tab3);
+        jTabbedPane1.add("Circuito4",tab4);
+        
+        
         
     }
 
@@ -35,28 +40,63 @@ public class CircuitoFrame extends javax.swing.JFrame {
     private void initComponents() {
 
         jTabbedPane1 = new javax.swing.JTabbedPane();
+        slider = new javax.swing.JSlider();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        slider.setMajorTickSpacing(10);
+        slider.setPaintLabels(true);
+        slider.setPaintTicks(true);
+        slider.setValue(0);
+        slider.setName(""); // NOI18N
+        slider.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                sliderStateChanged(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(24, 24, 24)
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 700, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(24, 24, 24)
+                        .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 700, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(37, 37, 37)
+                        .addComponent(slider, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(25, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(28, 28, 28)
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(30, Short.MAX_VALUE))
+                .addGap(48, 48, 48)
+                .addComponent(slider, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(54, 54, 54)
+                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void sliderStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_sliderStateChanged
+        // TODO add your handling code here:
+        Color c=new Color(255, 0, 0, slider.getValue()*2);
+        
+        circuito1.m.setC(c);
+        circuito1.m.setX(370);
+        circuito1.m.setY(230);
+        circuito1.m.setW(290);
+        circuito1.m.setH(130);
+        
+        jTabbedPane1.remove(0);
+        jTabbedPane1.add(tab1,0);
+        jTabbedPane1.setTitleAt(0, "Circuito1");
+        jTabbedPane1.setSelectedIndex(0);
+    }//GEN-LAST:event_sliderStateChanged
 
     /**
      * @param args the command line arguments
@@ -96,5 +136,16 @@ public class CircuitoFrame extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JSlider slider;
     // End of variables declaration//GEN-END:variables
+    Circuito1 circuito1= new Circuito1();
+    Circuito2 circuito2= new Circuito2();
+    Circuito3 circuito3= new Circuito3();
+    Circuito4 circuito4= new Circuito4();
+    
+    JPanel tab1 = circuito1;
+    JPanel tab2 = circuito2;
+    JPanel tab3 = circuito3;
+    JPanel tab4 = circuito4;
+        
 }
